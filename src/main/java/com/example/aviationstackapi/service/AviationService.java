@@ -31,7 +31,6 @@ public class AviationService {
         String url = String.format("%sflights?access_key=%s&%s", apiUrl, apiKey, query);
         String response =  restTemplate.getForObject(url, String.class);
         try {
-            // Parse response into JsonNode
             return objectMapper.readTree(response);
         } catch (Exception e) {
             throw new RuntimeException("Failed to parse API response", e);
