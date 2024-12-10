@@ -17,10 +17,10 @@ FROM amazoncorretto:21
 WORKDIR /app
 
 # Copy the JAR file from the builder stage to the runtime image
-COPY --from=builder /app/build/libs/*.jar /app/
+COPY --from=builder /app/build/libs/*.jar /app/app.jar
 
 # Expose the application port (adjust as needed)
 EXPOSE 8080
 
 # Command to run the main() method
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/"]
