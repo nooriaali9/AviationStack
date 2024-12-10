@@ -1,0 +1,11 @@
+type Query {
+    flights(query: String): [Flight]
+}
+
+type Flight {
+    id: ID
+    airline: String
+    flightNumber: String
+    departure: String
+    arrival: String
+}
